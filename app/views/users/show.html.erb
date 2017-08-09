@@ -1,0 +1,9 @@
+<p>Welcome to the theme park!</p>
+
+<p><b>Name:<%=@user.name%></b></p>
+<p><b>Height:<%=@user.tickets%></b></p>
+<p><b>Mood:<%=@user.mood%></b></p>
+<p><b>Height:<%=@user.height%></b></p>
+
+<%= link_to "Edit", edit_user_path(@user) %>
+<%= link_to "See Attractions", attractions_path %>
