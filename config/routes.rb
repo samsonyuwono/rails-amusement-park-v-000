@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :attractions
   resources :users
-  # resources :sessions
+  resources :sessions
   resources :rides
 
 
