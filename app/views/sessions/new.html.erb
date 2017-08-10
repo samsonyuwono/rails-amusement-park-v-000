@@ -1,6 +1,6 @@
 <h3>Login here</h3>
 
-<%= form_for @user, url: sessions_path do |f|%>
+<%= form_for @user, url: create_session_path do |f|%>
   Username: <%= f.text_field :name %> <br>
   Password: <%= f.password_field :password %><br>
   <%= f.submit "Sign In" %>
