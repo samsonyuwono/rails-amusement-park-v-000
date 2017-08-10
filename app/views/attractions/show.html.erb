@@ -2,10 +2,15 @@
   <div class="pic">
     <img src="http://www.allthingsclipart.com/05/amusement.park.05.jpg" height="250">
   </div>
+
 <b>Name:</b><%= @attraction.name %>
 <b>Ticket Requirement:</b><%=@attraction.tickets %>
 <b>Height Requirement:</b><%=@attraction.min_height%>
 <b>Nausea Rating:</b><%=@attraction.nausea%>
 <b>Happiness Rating:</b><%=@attraction.happiness %>
 
-<%= button_to "Go on this ride", ride_path %>
+<% if !current_user.admin? %>
+  <%= button_to "Go on this ride", new_ride_path, method: :get, params: {:attraction_id => @attraction.id}%>
+<% end %>
+<%= link_to_if(current_user.admin?, "Edit Attraction", { controller: "attractions", action: "edit", id: @attraction }){} %><br />
+<a href="/attractions">Back</a><p></p>
