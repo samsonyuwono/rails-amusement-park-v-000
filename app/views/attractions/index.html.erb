@@ -2,8 +2,10 @@
 
 <% @attractions.each do |attraction| %>
 <p>Name:<% attraction.name %></p>
-<p>Tickets:<% attraction.tickets %></p>
-<%= if(!current_user.admin?, link_to "Go on #{attraction.name}"<br />
-<% if admin? %>
-  <%= link_to("Edit", edit_attraction_path(attraction)) %>
-<% end %>
+<p>Tickets:<% attraction.tickets %></p> <br>
+<% if @user.admin? %>
+<%= link_to "New Attraction", new_attraction_path%>
+  <% else %>
+ <%=link_to("Show #{attraction.name}", "/attractions/#{attraction.id}") %>
+  <% end %>
+<%end %>

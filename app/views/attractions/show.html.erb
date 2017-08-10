@@ -7,16 +7,12 @@
 <b>Ticket Requirement:</b><%=@attraction.tickets %>
 <b>Height Requirement:</b><%=@attraction.min_height%>
 <b>Nausea Rating:</b><%=@attraction.nausea_rating%>
-<<<<<<< HEAD
 <b>Happiness Rating:</b><%=@attraction.happiness %>
-=======
-<b>Happiness Rating:</b><%=@attraction.happiness_rating %>
->>>>>>> 1d9c59eb357a821637ac1027d8a7caec1b285905
 
-<% if !current_user.admin? %>
+<% if !admin? %>
   <%= button_to "Go on this ride", new_ride_path%>
   <% else %>
-  <%= link_to "Edit Attraction", edit_ride_path
+  <%= link_to "Edit Attraction", edit_attraction_path(@attraction) %> <br />
 <% end %>
-<%= link_to_if(current_user.admin?, "Edit Attraction" %><br />
+
 <a href="/attractions">Back</a><p></p>
