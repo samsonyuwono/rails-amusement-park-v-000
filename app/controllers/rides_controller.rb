@@ -6,8 +6,7 @@ class RidesController < ApplicationController
     attraction_id: params[:attraction_id]
     )
     redirect_to user_path(current_user), notice: ride.take_ride
-
-    end
+  end
 
 
 

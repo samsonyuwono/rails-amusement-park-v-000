@@ -10,8 +10,12 @@ class AttractionsController < ApplicationController
   end
 
   def create
-    @attraction = Attraction.create(attraction_params).save
-    redirect_to attraction_path
+    @attraction = Attraction.new(attraction_params)
+    if @attraction.save
+      redirect_to attraction_path(@attraction)
+    else
+      render :new
+    end
   end
 
   def show
@@ -30,7 +34,7 @@ class AttractionsController < ApplicationController
 
 
   def attraction_params
-    params.require(:attraction).permit(:name, :tickets, :nausea_rating, :happiness_rating, :min_height, :id)
+    params.require(:attraction).permit(:name, :tickets, :nausea_rating, :happiness_rating, :min_height)
   end
 
 end
