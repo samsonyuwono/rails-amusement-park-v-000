@@ -41,6 +41,6 @@ require 'pry'
   private
 
   def user_params
-    params.require(:user).permit(:name, :password, :height, :happiness, :nausea, :tickets, :attraction_id)
+    params.require(:user).permit(:name, :password, :height, :happiness, :nausea, :tickets, :attraction_id, :admin)
   end
 end
