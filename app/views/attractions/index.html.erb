@@ -1,0 +1,8 @@
+<h1>Listing attractions</h1>
+
+<% @attractions.each do |attraction| %>
+<p>Name:<% attraction.name %></p>
+<p>Tickets:<% attraction.tickets %></p>
+<%= link_to_if(!current_user.admin?, "Go on #{attraction.name}", { controller: "attractions", action: "show", id: attraction }){} %><br />
+<%= link_to_if(current_user.admin?, "Show #{attraction.name}", { controller: "attractions", action: "show", id: attraction }){} %><br />
+<% end %>

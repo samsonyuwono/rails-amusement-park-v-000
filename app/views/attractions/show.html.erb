@@ -1,0 +1,11 @@
+<div class="center">
+  <div class="pic">
+    <img src="http://www.allthingsclipart.com/05/amusement.park.05.jpg" height="250">
+  </div>
+<b>Name:</b><%= @attraction.name %>
+<b>Ticket Requirement:</b><%=@attraction.tickets %>
+<b>Height Requirement:</b><%=@attraction.min_height%>
+<b>Nausea Rating:</b><%=@attraction.nausea%>
+<b>Happiness Rating:</b><%=@attraction.happiness %>
+
+<%= button_to "Go on this ride", ride_path %>

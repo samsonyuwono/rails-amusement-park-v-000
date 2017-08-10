@@ -20,7 +20,7 @@ require 'pry'
   end
 
   def show
-    @user = User.find_by(params[:id])
+    @user = User.find_by(params[:user_id])
     if session[:user_id]
       render :show
     else
@@ -28,9 +28,19 @@ require 'pry'
     end
   end
 
+  def edit
+    @user = User.find(session[:user_id])
+  end
+
+  def update
+    @user = User.find(session[:user_id])
+    @user.update(user_params)
+    redirect_to root_path
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:name, :password, :height, :happiness, :nausea, :tickets)
+    params.require(:user).permit(:name, :password, :height, :happiness, :nausea, :tickets, :attraction_id)
   end
 end
