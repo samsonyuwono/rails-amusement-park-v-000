@@ -15,11 +15,11 @@ class AttractionsController < ApplicationController
   end
 
   def show
-    @attraction = Attraction.find_by(params[:id])
+    @attraction = Attraction.find(params[:id])
   end
 
   def edit
-    @attraction = Attraction.find_by(params[:id])
+    @attraction = Attraction.find(params[:id])
   end
 
   def update

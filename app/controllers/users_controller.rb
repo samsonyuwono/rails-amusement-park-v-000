@@ -20,7 +20,7 @@ require 'pry'
   end
 
   def show
-    @user = User.find_by(params[:id])
+    @user = User.find(params[:id])
     if session[:user_id]
       render :show
     else
