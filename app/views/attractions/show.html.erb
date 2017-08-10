@@ -10,7 +10,9 @@
 <b>Happiness Rating:</b><%=@attraction.happiness %>
 
 <% if !current_user.admin? %>
-  <%= button_to "Go on this ride", new_ride_path, method: :get, params: {:attraction_id => @attraction.id}%>
+  <%= button_to "Go on this ride", new_ride_path%>
+  <% else %>
+  <%= link_to "Edit Attraction", edit_ride_path
 <% end %>
-<%= link_to_if(current_user.admin?, "Edit Attraction", { controller: "attractions", action: "edit", id: @attraction }){} %><br />
+<%= link_to_if(current_user.admin?, "Edit Attraction" %><br />
 <a href="/attractions">Back</a><p></p>
