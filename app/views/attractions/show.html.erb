@@ -6,8 +6,8 @@
 <b>Name:</b><%= @attraction.name %>
 <b>Ticket Requirement:</b><%=@attraction.tickets %>
 <b>Height Requirement:</b><%=@attraction.min_height%>
-<b>Nausea Rating:</b><%=@attraction.nausea%>
-<b>Happiness Rating:</b><%=@attraction.happiness %>
+<b>Nausea Rating:</b><%=@attraction.nausea_rating%>
+<b>Happiness Rating:</b><%=@attraction.happiness_rating %>
 
 <% if !current_user.admin? %>
   <%= button_to "Go on this ride", new_ride_path, method: :get, params: {:attraction_id => @attraction.id}%>
