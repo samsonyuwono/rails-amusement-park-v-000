@@ -4,8 +4,10 @@
 <p>Name:<% attraction.name %></p>
 <p>Tickets:<% attraction.tickets %></p><br>
 <% if admin? %>
-<%= link_to("New Attraction", new_attraction_path) %>
+<%=link_to("Show #{attraction.name}", "/attractions/#{attraction.id}") %>
   <% else %>
- <%=link_to("Show #{attraction.name}", "/attractions/#{attraction.id}") %>
+ <%=link_to("Go on #{attraction.name}", "/attractions/#{attraction.id}") %> <br />
   <% end %>
 <%end %>
+
+<%= link_to("New Attraction", new_attraction_path) %>
