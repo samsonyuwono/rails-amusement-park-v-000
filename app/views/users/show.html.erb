@@ -6,7 +6,7 @@
 <p><b>Mood:<%=@user.mood%></b></p><br />
 <p><b>Height:<%=@user.height%></b></p><br />
 <% if @user.admin %>
-<p>ADMIN: @user.admin %></p> <br />
+<p><b>ADMIN</b><%@user.admin %></p> <br />
 <% end %>
 
 <%= link_to "Edit", edit_user_path(@user) %>
