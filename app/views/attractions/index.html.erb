@@ -3,6 +3,7 @@
 <% @attractions.each do |attraction| %>
 <p>Name:<% attraction.name %></p>
 <p>Tickets:<% attraction.tickets %></p>
-<%= link_to_if(!current_user.admin?, "Go on #{attraction.name}", { controller: "attractions", action: "show", id: attraction }){} %><br />
-<%= link_to_if(current_user.admin?, "Show #{attraction.name}", { controller: "attractions", action: "show", id: attraction }){} %><br />
+<%= if(!current_user.admin?, link_to "Go on #{attraction.name}"<br />
+<% if admin? %>
+  <%= link_to("Edit", edit_attraction_path(attraction)) %>
 <% end %>
