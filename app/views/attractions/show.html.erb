@@ -7,7 +7,11 @@
 <b>Ticket Requirement:</b><%=@attraction.tickets %>
 <b>Height Requirement:</b><%=@attraction.min_height%>
 <b>Nausea Rating:</b><%=@attraction.nausea_rating%>
+<<<<<<< HEAD
 <b>Happiness Rating:</b><%=@attraction.happiness %>
+=======
+<b>Happiness Rating:</b><%=@attraction.happiness_rating %>
+>>>>>>> 1d9c59eb357a821637ac1027d8a7caec1b285905
 
 <% if !current_user.admin? %>
   <%= button_to "Go on this ride", new_ride_path%>
