@@ -16,6 +16,7 @@ class Ride < ActiveRecord::Base
     update_nausea
     update_happiness
     self.user.save
+   "Thanks for riding the #{self.attraction.name}!"
   end
 
   def enough_tickets?
