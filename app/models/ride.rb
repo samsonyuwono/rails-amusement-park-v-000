@@ -4,6 +4,7 @@ class Ride < ActiveRecord::Base
   belongs_to :user
 
   def take_ride
+    #returns boolean
     if enough_tickets? && tall_enough?
       ride_accepted
     else
@@ -39,10 +40,12 @@ class Ride < ActiveRecord::Base
   end
 
   def ticket_issue
+    binding.pry
     enough_tickets? ? "" : " You do not have enough tickets to ride the #{attraction.name}."
   end
 
   def height_issue
+    binding.pry
     tall_enough? ? "" : " You are not tall enough to ride the #{attraction.name}."
   end
 

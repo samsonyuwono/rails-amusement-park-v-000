@@ -5,9 +5,8 @@ class RidesController < ApplicationController
     user_id: current_user.id,
     attraction_id: params[:attraction_id]
     )
-    redirect_to user_path(current_user), notice: ride.take_ride
+    flash[:notice] = "Thanks for riding the #{ride.attraction.name}!"
+    redirect_to user_path(current_user)
   end
-
-
 
 end
