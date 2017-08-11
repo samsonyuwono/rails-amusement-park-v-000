@@ -28,7 +28,7 @@ class Ride < ActiveRecord::Base
   end
 
   def update_tickets
-    self.user.tickets - self.attraction.tickets
+    self.user.tickets -= self.attraction.tickets
   end
 
   def update_nausea
